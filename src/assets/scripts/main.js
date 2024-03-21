@@ -10,7 +10,24 @@
  * Write any other JavaScript below
  */
 
-+( function() {
-  const university = "UOC";
-  console.log(`Hello, ${university}!`);
-} )();
+const urlCompleta = document.URL;
+const info = document.getElementById('info');
+const actividades = document.getElementById('actividades');
+const galeria = document.getElementById('galeria');
+
+const partesURL = urlCompleta.split('/');
+const nombreArchivo = partesURL[partesURL.length - 1];
+
+indicarPagina(nombreArchivo);
+
+function indicarPagina(nombreArchivo) {
+  if (nombreArchivo.includes("index") || nombreArchivo === ""){
+    info.style.color = "rgb(254, 105, 106)";
+  }
+  else if (nombreArchivo.includes("actividades")){
+    actividades.style.color = "rgb(254, 105, 106)";
+  }
+  else if (nombreArchivo.includes("galeria")){
+    galeria.style.color = "rgb(254, 105, 106)";
+  }
+}
