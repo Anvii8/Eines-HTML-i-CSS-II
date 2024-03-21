@@ -13,6 +13,9 @@ body {
   line-height: 24px;
   background-color: $uoc-bg;
   color: $uoc-corporate;
+  @media (max-width: $mqMinWidth) {
+    padding: 1rem;
+  }
 }
 
 .uoc-container {
@@ -34,20 +37,24 @@ body {
   max-width: 100%;
   height: auto;
   clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 00% 80%, 0% 20%);
-  @media (max-width: $mqMinWidth) {
-    max-width: 100%;
-  }
+}
+.clip-bevel2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  height: auto;
+  clip-path: circle(60% at 50% 50%);
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
+.text{
+  text-align: justify;
+}
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
-  }
+@function invert($color, $amount: 100%) {
+  $inverse: color.change($color, $hue: color.hue($color) + 180);
+  @return mix($inverse, $color, $amount);
 }
 
 .nav-header{
@@ -55,22 +62,22 @@ body {
   justify-content: center;
   align-items: center;
   list-style: none;
+  a{
+    color: invert($navHeaderColor, 40%);
+    margin-right: 40px;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: $linksHoverColor;
+  }
+
   @media (max-width: $mqMinWidth) {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
   }
-}
-
-.nav-header a{
-  color: $navHeaderColor;
-  margin-right: 40px;
-  text-decoration: none;
-}
-
-.nav-header a:hover{
-  color: rgb(254, 105, 106);
 }
 
 .uoc-footer {
