@@ -18,7 +18,14 @@ body {
   }
 }
 
-.uoc-container {
+.header__title{
+  font-family: $font-family-serif;
+  font-size: 54px;
+  font-weight: 700;
+  color: $uoc-corporate;
+}
+
+.home__container {
   max-width: 800px;
   margin: auto;
   padding: 2rem;
@@ -29,7 +36,7 @@ body {
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.clip-bevel {
+.home__picture {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -38,7 +45,7 @@ body {
   height: auto;
   clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 00% 80%, 0% 20%);
 }
-.clip-bevel2 {
+.home__picture--secondary {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -48,7 +55,7 @@ body {
   clip-path: circle(60% at 50% 50%);
 }
 
-.text{
+.home__text{
   text-align: justify;
 }
 
@@ -57,7 +64,7 @@ body {
   @return mix($inverse, $color, $amount);
 }
 
-.nav-header{
+.header__nav--list{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +87,7 @@ body {
   }
 }
 
-.uoc-footer {
+.home__footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;
   text-align: center;
